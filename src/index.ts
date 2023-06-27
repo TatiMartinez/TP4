@@ -52,4 +52,23 @@ class EntidadVoto {
       this.candidatos = candidatos;
     }
   }
+// Clase para representar un votante
+class Votante extends EntidadVoto {
+  dni: string;
   
+  constructor(id: number, nombre: string, dni: string) {
+    super(id, nombre);
+    this.dni = dni;
+  }
+}
+
+// Clase para representar un voto
+class Voto {
+  votante: Votante;
+  candidato: Candidato;
+  
+  constructor(votante: Votante, candidato: Candidato) {
+    this.votante = votante;
+    this.candidato = candidato;
+  }
+}
