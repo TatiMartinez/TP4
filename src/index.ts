@@ -72,3 +72,25 @@ class Voto {
     this.candidato = candidato;
   }
 }
+
+// Ejemplo de uso:
+
+// Crear partidos políticos
+const partido1 = new PartidoPolitico(1, "Partido A", "Líder A", "Ideología A");
+const partido2 = new PartidoPolitico(2, "Partido B", "Líder B", "Ideología B");
+
+// Crear listas de candidatos
+const lista1 = new Lista(1, "Lista 1", [new Candidato(1, "Candidato 1", partido1, lista1), new Candidato(2, "Candidato 2", partido1, lista1)]);
+const lista2 = new Lista(2, "Lista 2", [new Candidato(3, "Candidato 3", partido2, lista2), new Candidato(4, "Candidato 4", partido2, lista2)]);
+
+// Crear votantes
+const votante1 = new Votante(1, "Votante 1", "12345678");
+const votante2 = new Votante(2, "Votante 2", "87654321");
+
+// Realizar un voto
+const voto1 = new Voto(votante1, lista1.candidatos[0]);
+const voto2 = new Voto(votante2, lista2.candidatos[1]);
+
+// Obtener información del voto
+console.log(`${voto1.votante.nombre} votó por ${voto1.candidato.nombre}`);
+console.log(`${voto2.votante.nombre} votó por ${voto2.candidato.nombre}`);
